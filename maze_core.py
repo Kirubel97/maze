@@ -50,3 +50,14 @@ def choose_boundary_cells():
     return (start_choice[0], start_choice[1]), (end_choice[0], end_choice[1]), start_choice[2], end_choice[2]
 
 start_cell, end_cell, start_wall, end_wall = choose_boundary_cells()
+
+# Break boundary entrance/exit outer walls cleanly
+if start_wall == 'N': northWall[start_cell[0] + 1][start_cell[1]] = 0
+elif start_wall == 'S': northWall[start_cell[0]][start_cell[1]] = 0
+elif start_wall == 'W': eastWall[start_cell[0]][start_cell[1]] = 0
+elif start_wall == 'E': eastWall[start_cell[0]][start_cell[1] + 1] = 0
+
+if end_wall == 'N': northWall[end_cell[0] + 1][end_cell[1]] = 0
+elif end_wall == 'S': northWall[end_cell[0]][end_cell[1]] = 0
+elif end_wall == 'W': eastWall[end_cell[0]][end_cell[1]] = 0
+elif end_wall == 'E': eastWall[end_cell[0]][end_cell[1] + 1] = 0
