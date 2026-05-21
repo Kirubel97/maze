@@ -1,6 +1,8 @@
 # ========================================================
 # STEP-BY-STEP MAZE GENERATION ENGINE
 # ========================================================
+import random
+
 
 gen_stack = Stack()
 current_gen_cell = (random.randint(0, R - 1), random.randint(0, C - 1))
