@@ -17,7 +17,7 @@ An invisible **"mouse"** is placed in an arbitrarily chosen cell. Its job is to 
 At each step, the mouse:
 
 1. Checks its four neighbors.
-2. Identifies which neighbors still have **all four walls intact** .
+2. Identifies which neighbors still have all four walls intact .
 3. **Randomly picks one** unvisited neighbor, saves the others onto a stack, erases the connecting wall, and moves into the chosen cell.
 4. Repeats until it reaches a **dead end** where all the neighbors are visited.
 5. At a dead end, it **pops the stack** to backtrack to the most recent cell that still has unvisited neighbors, and continues from there.
@@ -26,7 +26,7 @@ At each step, the mouse:
 > **💡 Why a stack and not a queue?**
 > A stack enforces last-in, first-out backtracking, which means the mouse always continues from the *most recently reached* cell. This produces **long, winding corridors** with relatively few branches.
 >
-> A **queue** would produce breadth-first generation instead. Rather than carving deep passages, it would expand the frontier evenly in all directions, creating **shorter, more branching corridors** that feel busier and less "tunnellike." The overall maze structure would look fundamentally different, it's wider but shallower paths, with many more branches near the start.
+> A **queue** would produce breadth-first generation instead. Rather than carving deep passages, it would expand the frontier evenly in all directions, creating **shorter, more branching corridors** that feel busier and less "tunnellike." The overall maze structure would look fundamentally different; it would have wider but shallower paths, with many more branches near the start.
 
 ### Cycle Creation
 
@@ -39,7 +39,7 @@ To defeat this strategy, **with roughly 1-in-20 probability** at each step, the 
 
 ## 🔴 How the Maze is Solved
 
-Once generation is complete, a **second mouse** starts at the `START` cell and searches for the `END` cell using **iterative DFS with backtracking** the same as generation.
+Once generation is complete, a **second mouse** starts at the `START` cell and searches for the `END` cell using **iterative DFS with backtracking**, identical to the generation phase.
 
 At each step, the solver:
 
@@ -75,7 +75,7 @@ pip install pygame
 ## ▶️ Running the Simulation
 
 ```bash
-python maze.py
+python main.py
 ```
 
 The window will open and immediately begin the generation phase. Once the maze is fully carved, the solver mouse will start automatically.
@@ -83,7 +83,7 @@ The window will open and immediately begin the generation phase. Once the maze i
 
 ## 🔧 Configuration
 
-At the top of `maze.py`, you can adjust the following constants:
+You can adjust the following constants at the top of maze_core.py (for grid dimensions) or main.py (for simulation speed):
 
 | Constant    | Default | Description                        |
 |-------------|---------|------------------------------------|
