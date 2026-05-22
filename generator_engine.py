@@ -2,6 +2,7 @@
 # STEP-BY-STEP MAZE GENERATION ENGINE
 # ========================================================
 import random
+from maze_core import R, C, visited, Stack, eat_wall_between
 
 
 gen_stack = Stack()
@@ -27,7 +28,7 @@ def generation_step():
     if neighbors:
         next_r, next_c = random.choice(neighbors)
         
-        # Addendum Challenge: 1 out of 20 times (5%), eat into an already visited neighbor to create cycles
+        # BONUS CHALLENGE: 1/20 chance to create a cycle by eating an extra wall
         if random.random() < 0.05:
             visited_neighbors = []
             for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
@@ -48,4 +49,3 @@ def generation_step():
         if not gen_stack.is_empty():
             current_gen_cell = gen_stack.peek()
 
-# final suubmission
