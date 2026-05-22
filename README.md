@@ -1,6 +1,8 @@
 # 🐭 Maze Generator & Solver (Pygame)
 
-A visual simulation of **randomized maze generation and solving**, built with Python and Pygame. Watch an invisible "mouse" carve a solvable maze from a solid grid, then follow a second mouse as it finds the exit using backtracking.
+A visual simulation of **randomized maze generation and solving**, built with Python and Pygame. Watch an invisible "mouse" carve a solvable maze from a solid grid, then follow a second mouse as it finds the exit using backtracking. 
+
+> Recording: https://www.loom.com/share/c7b45249d76847bab9e741181bd88146
 
 ## 🗺️ How the Maze is Generated
 
