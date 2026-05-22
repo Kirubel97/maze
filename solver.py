@@ -1,6 +1,8 @@
 # ========================================================
 # PATHFINDER MOUSE BRAIN & SOLVER LOGIC
 # ========================================================
+from maze_core import Stack, start_cell, end_cell, northWall, eastWall, R, C
+import random
 
 solver_stack = Stack()
 solver_visited = set()
